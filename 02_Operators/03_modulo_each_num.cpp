@@ -9,11 +9,19 @@ int main(){
     cin >> n;
     while (n > 0)
     {
-        /* code */
         int digit = n % 10; // for last digit
         cout << digit << " ";
         n = n / 10; // To omit the last digit.
     }
-
+    
     return 0;
 }
+/* 
+ভাগের মূল সূত্রঃ
+a / b = q
+এবং 
+a = b * q + r
+যেখানেঃ a = ভাজ্য (dividend) b = ভাজক (divisor) 
+q = ভাগফল (quotient) ও r = ভাগশেষ (reminder)
+Condition: 0 <= r < b
+ */
