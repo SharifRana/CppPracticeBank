@@ -1,3 +1,28 @@
+## Condition-এর সংজ্ঞা:
+    একটি অভিব্যক্তি, যা সত্য (true) বা মিথ্যা (false)
+    মান দেয়—এবং সেই মানের ওপর ভিত্তি করে
+    প্রোগ্রামের প্রবাহ নির্ধারিত হয়।
+
+# গাণিতিক রূপ:
+    C(x) → {true, false}
+
+# কাঠামো:
+    (Left Operand, Operator, Right Operand)
+
+# প্রকার:
+    - Simple: marks >= 90
+    - Compound: a && b, a || b, !a
+    - Nested: if-এর ভেতরে if
+    - Ternary: a ? b : c
+    - Switch: multiple cases
+
+# প্যাটার্ন বৈশিষ্ট্য:
+    - Boolean: শুধু দুটি মান
+    - Deterministic: একই ইনপুট → একই ফল
+    - Composable: && || ! দিয়ে
+    - Short-circuit: বাম থেকে ডানে
+    - Boundary-sensitive: >= বনাম >
+
 ## আপনার জন্য অগ্রাধিকার
 #	টপিক	        এখন শিখবেন?	কারণ
 ১	if statement	✅ এখনই	সবচেয়ে মৌলিক
