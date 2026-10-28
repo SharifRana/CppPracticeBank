@@ -22,15 +22,18 @@ C++ program is a set of instruction which stared with `main()` function. And con
     using namespace std;
 
     int main(){
-        // Output
-        cout <<"Hello C++" << endl;
+        // Variable Declaration
+        int n; 
 
         // Input
         int n;
         cin >>n;
 
         // Process 
-        cout  <<"You entered" << n << endl;
+        int result = n * 2;
+
+        // Output
+        cout <<"The Result = " << result << endl;
         
         return 0;
     }
