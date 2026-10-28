@@ -37,3 +37,27 @@ C++ program is a set of instruction which stared with `main()` function. And con
         
         return 0;
     }
+
+## Fast I/O Template (Competitive)
+    #include <iostream>
+    using namespace std;
+
+    int main(){
+        ios::sync_with_stdio(false);
+        cin.tie(nulptr);
+
+        int T;
+        cin >> T;
+        while(T--){
+            // solve
+        }
+        return 0;
+    }
+
+## Checklist
+    header ok?
+    main() available?
+    `;` semicolon in each statement?
+    return 0; Ok?
+    Input/Output are right?
+
