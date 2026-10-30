@@ -1,16 +1,99 @@
-## 	Operator	এখন শিখবেন?	কারণ
-    ১	Arithmetic	    ✅ এখনই	সব প্রোগ্রামে দরকার
-    ২	Relational	    ✅ এখনই	Condition-এর ভিত্তি
-    ৩	Logical	        ✅ এখনই	Condition-এর ভিত্তি
-    ৪	Assignment	    ✅ এখনই	Variable-এ মান বসাতে
-    ৫	Bitwise	        ❌ পরে	Advanced, DSA-তে লাগবে
-    ৬	Miscellaneous	⚠️ আংশিক	sizeof, ?: এখন
-    ৭	Precedence	    ⚠️ বেসিক	শুধু মূল নিয়ম
-    ৮	Associativity	❌ পরে	জটিল, পরে
-    ৯	Overloading	    ❌ অনেক পরে	OOP শেখার পর
-    ১০	Type Casting	⚠️ বেসিক	শুধু মূল ধারণা
+# Operator: Arithmetic and Logical Operators
 
-## সিনট্যাক্স (কীভাবে লিখতে হয়)
+## Definition 
+Operator is a special symbol which work between two operand and gives a result. 
+
+- Type:
+    Arithmetic: + - / %
+    Relational: == != < > <= >=
+    Logical: && || !
+    Assignment: = += -= *= /=
+    Increment/Decrement: ++ --
+    Bitwise: & | ^ ~ << >>
+
+## Pattern
+    `operand1 operator operand2 -> result`
+
+    Operator Pattern:
+    |
+    |___ Arity
+    |    |___ Unary: -a, !x, ++i
+    |    |___ Binary: a+b, a%b
+    |    |___ Ternary: a ? b : c
+    |
+    |___ Precedence
+    |    |___ () []
+    |    |___ ++ -- !
+    |    |___ * / %
+    |    |___ < > <= >=
+    |    |___ == !=
+    |    |___ &&
+    |    |___ ||
+    |    |___ = += -=
+    |
+    |___ Associativity
+         |___ Left -> Right: + - * /
+         |___ Right -> Left: = += 
+
+
+## Algorithm (Expression)
+    Algorithm and Precedence are same things here
+    NB: Same priority operator Left -> Right
+
+## Template:
+
+    #include <iostream>
+    using namespace std;
+    
+    int main(){
+        int a = 17, b = 5;
+
+        // Arithmetic
+        cout << a + b << endl;      // 22
+        cout << a - b << endl;      // 12
+        cout << a * b << endl;      // 85
+        cout << a / b << endl;      // 3 (int)
+        cout << a % b << endl;      // 2 
+
+        // Relational
+        cout << (a > b) << endl;    // 1
+        cout << (a == b) << endl;   // 0
+
+        // Logical 
+        bool x = true, y = false;
+        cout << (x && y) << endl;   // 0
+        cout << (x || y) << endl;   // 1
+        cout << (!x) << endl;       // 0
+
+        // Assignment
+        a += 5                      // a = 22
+        a *= 2                      // a = 44
+
+        // Increment 
+        int i = 5;
+        cout << i++ << endl;        // 5 (post)
+        cout << ++i << endl;        // 7 (pre)
+
+        // Ternary
+        int max = (a > b) ? a : b;
+
+        return 0;
+    }
+
+
+## Divisibility Template
+
+    if (n % d == 0){ /* d | n */}
+    if (n % 2 == 0){ /* even */}
+
+## Checklist
+    = and == use correctly?
+    Precedence correct?
+    Integer division known?
+    Overflow risk?
+
+
+## Syntax details:
     cpp
     int a = 10, b = 3;
 
@@ -25,15 +108,16 @@
     a--;    // a = a - 1
     ++a;    // a = a + 1 (আগে বাড়ায়)
     --a;    // a = a - 1 (আগে কমায়)
-    সিনট্যাক্স চিহ্ন:
-    চিহ্ন	নাম
-    +	Plus
-    -	Minus
-    *	Asterisk (গুণ)
-    /	Slash (ভাগ)
-    %	Modulus (ভাগশেষ)
-    ++	Increment
-    --	Decrement
+    Syntax symbol:
+    Syntax	Name
+    +	    Plus
+    -	    Minus
+    *	    Asterisk (গুণ)
+    /	    Slash (ভাগ)
+    %	    Modulus (ভাগশেষ)
+    ++	    Increment
+    --	    Decrement
+    
 ## ধারণা (কেন এভাবে লিখতে হয়)
     কেন * গুণের জন্য, × নয়?
     •	কীবোর্ডে × নেই
