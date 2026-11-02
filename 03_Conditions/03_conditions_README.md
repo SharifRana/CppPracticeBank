@@ -1,4 +1,6 @@
 # Conditions
+
+## Definition
     Conditions (Decision Making) is that process which decide the one way by checking between two or more condition.
 
 ## Pattern
@@ -95,3 +97,6 @@
     File Name: ১০-১ C++ Condition (Decision Making) ৪ স্তরে সম্পূর্ণ বিশ্লেষণ + আপনার জন্য অগ্রাধিকার
 
     Folder Location: ...\Learning Plan Details\DSA & C++\Basic Learing
+
+    File Name: ৩-২ ৮টি README ফাইল সম্পূর্ণ নোট (Definition, Pattern, Algorithm, Template).docx
+    Folder Location: ...\Learning Plan Details\DSA & C++\Basic Learing\প্যাটার্ন শিখুন

@@ -1,130 +1,155 @@
-## সংজ্ঞা ও কেন দরকার
-    ১.১ সংজ্ঞা
-    Array = একই ধরনের (same type) একাধিক মান একটি নির্দিষ্ট নামে সংরক্ষণ।
-    সহজ ভাষায়: একটি বাক্সে অনেকগুলো একই রকম জিনিস—প্রতিটির একটি index (নম্বর)।
-    text
-    int arr[5] = {10, 20, 30, 40, 50};
-    text
+# Array
+
+## Definition
+    An array contains multiple objects of identical types stored sequentially in memory. The individual objects in an array, referred to as array elements, can be addressed using a number, the so-called index or subscript. An array is referred to as a vector.
+
+## Key Features 
+    Of the same type (homogeneous)
+    Specific size (fixed)
+    Sequential memory (contiguous)
+    O(1) access
+
+## Pattern
+    `type arr[size];`
+
+    Array Pattern:
+    |___ Declaration: int arr[5];
+    |___ Initialization: int arr[5] = {10, 20, 30, 40, 50};
+    |___ Access: arr[i] (0 <= i < n)
+    |___ Update: arr[i] = x; 
+    |___ Traversal: for (i=0; i<n; i++)
+
+    Memory: base + i * sizeof(type)
     Index:   0    1    2    3    4
-           ┌────┬────┬────┬────┬────┐
-    Value: │ 10 │ 20 │ 30 │ 40 │ 50 │
-           └────┴────┴────┴────┴────┘
+    Value: [10] [20] [30] [40] [50]
 
-## কেন Array দরকার?
-    সমস্যা: ৫ জন ছাত্রের নম্বর সংরক্ষণ করতে হবে।
-    ❌ Array ছাড়া (৫টি variable):
-    cpp
-    int mark1 = 85;
-    int mark2 = 90;
-    int mark3 = 78;
-    int mark4 = 92;
-    int mark5 = 88;
+## Algorithm (Basic Operation)
+1. Declare: int arr[100];
+2. Input: for(i=0; i<n; i++) cin >> arr[i];
+3. Sum: for (i=0; i<n; i++) sum += arr[i];
+4. Max: max = arr[0]; if( arr[i]>max ) max = arr[i];
+5. Search: if( arr[i] == key) break;
+6. Reverse: swap( arr[1], arr[r] ) with two pointer
+7. Sort: Bubble/Selection/Insertion
 
-    // Average বের করতে:
-    int sum = mark1 + mark2 + mark3 + mark4 + mark5;
-    সমস্যা: ১০০০ জন ছাত্র হলে? ১০০০টি variable!
-    ✅ Array দিয়ে:
-    cpp
-    int marks[5] = {85, 90, 78, 92, 88};
+## Template
+    #include <iostream>
+    using namespace std;
 
-    int sum = 0;
-    for (int i = 0; i < 5; i++) {
-        sum += marks[i];
+    int main(){
+        // 1.
+        int n;
+        cin >> n;
+
+        // 2. Declaration
+        int arr[100];
+
+        // 3. Input 
+        for (int = 0; i < n; i++){
+            cin >> arr[i]       // arr[i] or arr[n]??
+        }
+        
+        // or 4. Initialization (loop)
+        for (int = 0; i < 5; i++){
+            arr[i] = i * 10;
+        }
+        // {0, 10, 20, 30, 40}
+
+        // 5. Direct init
+        int marks[5] = {85, 90, 78, 92, 88}
+
+        // 6. Size (auto)
+        int a[] = {1, 2, 3, 4, 5}; // size = 5
+
+        // 7. Output or Traverse
+        for (int i = 0; i < n; i++){
+            cout arr[i] << " ";
+        }
+        //or
+        for (int i = 0; i < 5; i++){
+            cout << marks[i] << " ";
+        }
+
+        // 8. Sum
+        int sum = 0;
+        for (int = 0; i < n; i++){
+            sum += arr[i];
+        }
+
+        // 9. Max
+        int maxVal = arr[0];
+        for (int i = 0; i < n; i++){
+            if (arr[i] > maxVal){
+                maxVal = arr[i];
+            }
+        }
+
+        // 10. Linear Search
+        int key = 30, pos = -1;
+        for (int i = 0; i < n; i++){
+            if (arr[i] == key){
+                pos = i; break;
+            }
+        }
+
+        // 11. Reverse (in-place)
+        int l = 0, r = n - 1;
+        while (l < r){
+            swap (arr[l], arr[r]);
+            l++; r--;
+        }
+
+        return 0;
     }
 
-## Array-র ৪টি মূল বৈশিষ্ট্য
-    বৈশিষ্ট্য	        ব্যাখ্যা
-    Same Type	    সব element একই ধরনের (int, double)
-    Fixed Size	    সাইজ আগে থেকে নির্ধারিত
-    Indexed	        0 থেকে শুরু
-    Contiguous	    মেমরিতে পাশাপাশি
+## 12. 2D array:
+    int matrix[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
 
-## স্তর ১ — সিনট্যাক্স (কীভাবে লিখতে হয়)
-    ২.১ ঘোষণা (Declaration)
-    সিনট্যাক্স:
-    cpp
-    type arrayName[size];
-
-    উদাহরণ:
-    cpp
-    int arr[5];           // ৫টি integer
-    double prices[10];    // ১০টি double
-    char letters[26];     // ২৬টি character
-    bool flags[100];      // ১০০টি boolean
-
-    মনে রাখার নিয়ম:
-    text
-    int  arr  [5];
-    ↓    ↓    ↓
-    type name size
-
-## সিনট্যাক্স চিটশিট
-    cpp
-    // ঘোষণা
-    int arr[10];
-
-    // Init
-    int arr[5] = {1, 2, 3, 4, 5};
-    int arr[] = {1, 2, 3};        // auto size
-    int arr[5] = {0};             // সব 0
-
-    // Access
-    arr[0];        // প্রথম
-    arr[4];        // পঞ্চম
-
-    // Modify
-    arr[0] = 100;
-
-    // Loop
-    for (int i = 0; i < 5; i++) {
-        cout << arr[i];
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j < 3; j++){
+            cout << matrix[i] [j] << " ";
+        }
+        cout << endl; 
     }
 
-    // 2D
-    int m[3][3];
-    m[1][2] = 10;
+## 13. Bubble Sort: 
+    for (int i = 0; i < n-1 ; i++){
+        for (int j = 0; j < n -1; j++){
+            if (arr[j] > arr[j + 1]){
+                swap( arr[j], arr[j + 1]);
+            }
+        }
+    }
 
-## স্তর ২ — ধারণা (কেন এভাবে লিখতে হয়)
-    ৩.১ কেন Index 0 থেকে শুরু?
-    কারণ: মেমরি অ্যাড্রেস হিসাব সহজ।
+## 14. Binary Search:
+
+    int binarySearch (int arr[], int n, int key){
+        int l = 0, r = n - 1;
+        while (l <= r){
+            int mid = l + (r - 1) / 2;
+            if (arr[mid] == key){
+                return mid;
+                }else if (arr[mid] < key){
+                    l = mid + 1;
+                }else{
+                    r = mid - 1;
+                }
+        }
+        return -1;
+    }
+
+## Checklist 
+    Index start from 0?
+    Out of bounds avoid?
+    Size is right?
+    Size pass to Function?
     
-    Array base address = 1000
-    Element size = 4 (int)
 
-    arr[0] → 1000 + 0×4 = 1000
-    arr[1] → 1000 + 1×4 = 1004
-    arr[2] → 1000 + 2×4 = 1008
-    arr[i] → 1000 + i×4
-
-    সূত্র: address = base + i × size
-    যদি 1 থেকে শুরু হতো:
-    
-    arr[1] → 1000 + (1-1)×4 = 1000  ← জটিল!
-    তাই: 0 থেকে শুরু—সহজ গাণিতিক সূত্র।
-
-    ৩.২ কেন Fixed Size?
-    কারণ: মেমরিতে জায়গা আগে থেকেই নির্ধারিত।
-    cpp
-    int arr[5];    // 5 × 4 = 20 bytes allocate
-    Stack-এ মেমরি:
-    text
-    Stack:
-    ┌──────────────┐
-    │  arr[0] = ?  │  ← 4 bytes
-    ├──────────────┤
-    │  arr[1] = ?  │  ← 4 bytes
-    ├──────────────┤
-    │  arr[2] = ?  │
-    ├──────────────┤
-    │  arr[3] = ?  │
-    ├──────────────┤
-    │  arr[4] = ?  │
-    └──────────────┘
-        মোট 20 bytes
-    সুবিধা: দ্রুত access (O(1))
-    অসুবিধা: Size বদলানো যায় না।
-
-## Operator Details 
+## Array Details 
     File Name: 
     ১৫-১ Array সম্পূর্ণ লেভেল-ভিত্তিক বিশ্লেষণ 
     ১৫-২ Array শেখার ৪ স্তর বিস্তারিত ধাপে ধাপে ব্যাখ্যা
@@ -132,3 +157,6 @@
     ১৫-৪ Array ও Table-এর সম্পর্ক বিস্তারিত ব্যাখ্যা
 
     Folder Location: ...\Learning Plan Details\DSA & C++\Basic Learing
+
+    File Name: ৩-২ ৮টি README ফাইল সম্পূর্ণ নোট (Definition, Pattern, Algorithm, Template).docx
+    Folder Location: ...\Learning Plan Details\DSA & C++\Basic Learing\প্যাটার্ন শিখুন
