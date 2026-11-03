@@ -25,12 +25,14 @@
 
 ## Algorithm (Basic Operation)
 1. Declare: int arr[100];
-2. Input: for(i=0; i<n; i++) cin >> arr[i];
-3. Sum: for (i=0; i<n; i++) sum += arr[i];
-4. Max: max = arr[0]; if( arr[i]>max ) max = arr[i];
-5. Search: if( arr[i] == key) break;
-6. Reverse: swap( arr[1], arr[r] ) with two pointer
-7. Sort: Bubble/Selection/Insertion
+2. Input or Initial: for(i=0; i<n; i++) cin >> arr[i]; or `{}`
+3. Access by index: (`arr[i]`)
+4. Traverse by loop
+5. Sum: for (i=0; i<n; i++) sum += arr[i];
+6. Max: max = arr[0]; if( arr[i]>max ) max = arr[i];
+7. Search: if( arr[i] == key) break;
+8. Reverse: swap( arr[1], arr[r] ) with two pointer
+9. Sort: Bubble/Selection/Insertion
 
 ## Template
     #include <iostream>
@@ -141,6 +143,17 @@
         }
         return -1;
     }
+
+## Operation & Complexity:
+    Operation           Time
+    Access              O(1)
+    Update              O(1)
+    Traversal           O(n)
+    Linear Search       O(n)
+    Binary Search       O(log n) (sorted)
+    Insert (end)        O(1)
+    Insert (mid)        O(n)
+    Delete (mid)        O(n)
 
 ## Checklist 
     Index start from 0?
