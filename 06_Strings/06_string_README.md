@@ -122,3 +122,14 @@
     Out of bounds avoided?
     Case sensitivity check?
     Empty string check?
+
+## Operation & Complexity
+    Operation       Time
+    Access s[i]     O(1)
+    Length          O(1)
+    Concatenate     O(n+m)
+    Comparison      O(min(n,m))
+    Substring       O(k)
+    Find            O(n*m)
+    Reverse         O(n)
+    
