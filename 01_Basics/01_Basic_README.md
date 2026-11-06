@@ -1,6 +1,22 @@
 # Basics: C++ Program Structure 
 
 ## Definition
+- Characteristics of C++
+    C++ is not a purely object-oriented language but a hybrid that contains the functionality of the C programming language. This means that you have all the features that are available
+- in C:
+    ■ universally usable modular programs
+    ■ efficient, close to the machine programming
+    ■ portable programs for various platforms.
+The large quantities of existing C source code can also be used in C++ programs.
+    C++ supports the concepts of object-oriented programming (or OOP for short),
+- which are:
+    ■ data abstraction, that is, the creation of classes to describe objects
+    ■ data encapsulation for controlled access to object data
+    ■ inheritance by creating derived classes (including multiple derived classes)
+    ■ polymorphism (Greek for multiform), that is, the implementation of instructions that can have varying effects during program execution.
+
+Various language elements were added to C++, such as references, templates, and exception handling. Even though these elements of the language are not strictly object-oriented programming features, they are important for efficient program implementation.
+
 C++ program is a set of instruction which stared with `main()` function. And contains all kind of header, namespace, main function, and return statement. 
 
 ## Pattern
