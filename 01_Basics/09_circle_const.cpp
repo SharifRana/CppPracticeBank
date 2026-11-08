@@ -1,5 +1,5 @@
 
-// Circumference and area of a circle with radius 2.5
+// Circumference and area of a circle with radius 1.5
 
 #include <iostream>
 using namespace std;
