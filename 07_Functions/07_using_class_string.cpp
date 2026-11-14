@@ -7,7 +7,7 @@ int main()
     // Defines four strings: 
     string prompt(" What is your name: "),
            name,                // An empty
-           line( 40, '-' ),     // sting with 40 '-'
+           line( 40, '-' ),     // string with 40 '-'
            total = "Hello ";    // is possible!
 
     cout << prompt;             // Request for input.
